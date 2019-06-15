@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+          margin-top:70px;
+          background:#333;
+          color:#fff;
+          }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+
+
+      <div class="text-center">
+        <a class="btn btn-light mb-3" href="index.html">HOME</a>
+      </div>
+
+      <h1 class="text-center">Temperature Converter</h1>
+
+
+      <form>
+        <div class="form-group">
+          <input id="celInput" type="number" class="form-control form-control-lg" placeholder="Enter Celsius...">
+        </div>
+      </form>
+
+      <div id="output">
+        <div class="card bg-primary mb-2">
+          <div class="card-body">
+            <h4>Kelvin:</h4>
+            <div id="kelOutput"></div>
+          </div>
+        </div>
+
+        <div class="card bg-danger mb-2">
+          <div class="card-body">
+            <h4>Fahrenheit:</h4>
+            <div id="frOutput"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+    <script>
+      document.getElementById("output").style.visibility = "hidden";
+      document.getElementById("celInput").addEventListener("input", function(e) {
+              document.getElementById("output").style.visibility = "visible";
+              var cel = e.target.value;
+              document.getElementById("kelOutput").innerHTML = Number(cel) + 273.15;
+              document.getElementById("frOutput").innerHTML = (cel * 9/5) + 32 ;
+
+      });
+    </script>
+
+  </body>
+</html>
